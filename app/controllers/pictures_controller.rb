@@ -8,6 +8,7 @@ class PicturesController < ApplicationController
   end
   def create
     @picture = Picture.new(picture_params)
+    @picture.user_id = current_user.id
     if params[:back]
       reder :new
     else
@@ -38,6 +39,7 @@ class PicturesController < ApplicationController
   end
   def confirm
     @picture = Picture.new(picture_params)
+    @picture.user_id = current_user.id
     render :new if @picture.invalid?
   end
   private
