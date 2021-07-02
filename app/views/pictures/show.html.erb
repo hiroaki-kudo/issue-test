@@ -2,4 +2,5 @@
 <p>タイトル: <%= @picture.title %></p>
 <p>内容: <%= @picture.content %> </p>
 <strong>Image:</strong>
-<%# <%= image_tag @picture.image.url %> %>
+<%= image_tag @picture.image.url %>
+<p><%= link_to '写真一覧ページへ' , pictures_path %></p>
