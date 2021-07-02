@@ -10,7 +10,7 @@ class PicturesController < ApplicationController
     @picture = Picture.new(picture_params)
     @picture.user_id = current_user.id
     if params[:back]
-      reder :new
+      render :new
     else
       if @picture.save
         redirect_to pictures_path, notice: "写真を作成しました"
